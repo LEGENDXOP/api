@@ -23,6 +23,6 @@ async def read_root():
 async def create_item(token: Token):
   res = {
      "method": "post",
-     "response": token
+     "response": token.token
   }
   return res
