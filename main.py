@@ -12,9 +12,14 @@ class Token(BaseModel):
     token: str
     username: Optional[str] = None
 
-
 app = FastAPI()
-#bot = tg("UltraXOp", 1621727, "31350903c528876f79527398c09660ce")
+
+class run:
+  def __init__(self):
+    self.pro = True
+  @staticmethod
+  async def start(bot):
+    return await bot.get_me()
 
 @app.get("/")
 async def read_root():
@@ -24,6 +29,7 @@ async def read_root():
 async def create_bot(token):
   bot = tg(token, API_ID, API_HASH)
   await bot.start(bot_token=token)
+  await run.start(bot)
   await bot.send_message("legendx22", "hello")
   await bot.log_out()
   res = {
