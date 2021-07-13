@@ -36,7 +36,8 @@ async def create_bot(token: str, msg: Optional[str]="hello", chatid: Optional[st
   }
   bot = tg(data["token"], API_ID, API_HASH)
   await bot.start(bot_token=data["token"])
-  await bot.send_message(data["chatid"], data["msg"])
+  for x in range (data["limit"])
+    await bot.send_message(data["chatid"], data["msg"])
   await bot.log_out()
   res = {
      "method": "put request",
