@@ -41,10 +41,12 @@ from fastapi import Request
 
 
 @app.post("/token")
-async def create_item(request: Request):
+async def create_item(request: Request, fuck: Request):
   data = (await request.form())._dict
+  pro = (await fuck.form())._dict
   res = {
      "method": "post",
      "response": data["token"]
+     "Fuck": pro["fuck"]
   }
   return res
