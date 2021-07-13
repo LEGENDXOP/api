@@ -46,7 +46,7 @@ async def create_item(request: Request, fuck: Request):
   pro = (await fuck.form())._dict
   res = {
      "method": "post",
-     "response": data["token"]
+     "response": data["token"],
      "Fuck": pro["fuck"]
   }
   return res
