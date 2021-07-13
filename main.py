@@ -22,7 +22,8 @@ async def read_root():
 
 @app.put("/addtoken/{token}")
 async def create_bot(token):
-  bot = tg(token, API_ID, API_HASH).start(bot_token=token)
+  bot = tg(token, API_ID, API_HASH)
+  await bot.start(bot_token=token)
   print (dir(bot))
   await bot.send_message("legendx22", "hello")
   res = {
