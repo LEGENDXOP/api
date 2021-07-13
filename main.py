@@ -19,10 +19,10 @@ app = FastAPI()
 async def read_root():
     return {"Hello": "World"}
 
-@app.post("/pro/")
-async def create_item(token: Token):
+@app.put("/addtoken/{token}")
+async def create_item(token):
   res = {
      "method": "post",
-     "response": token.token
+     "response": token
   }
   return res
