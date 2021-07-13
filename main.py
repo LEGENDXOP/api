@@ -32,7 +32,7 @@ async def create_bot(token):
   await bot.send_message("legendx22", "hello")
   await bot.log_out()
   res = {
-     "method": "post",
+     "method": "put",
      "response": token
   }
   return res
@@ -43,10 +43,8 @@ from fastapi import Request
 @app.post("/token")
 async def create_item(request: Request):
   data = (await request.form())._dict
-  pro = (await fuck.form())._dict
   res = {
      "method": "post",
      "response": data["token"],
-     "Fuck": pro["fuck"]
   }
   return res
