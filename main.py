@@ -31,8 +31,11 @@ async def create_bot(token):
   }
   return res
 
+from fastapi import Request
+
+
 @app.post("/token")
-async def create_item(token):
+async def create_item(request: Request):
   data = (await request.form())._dict
   res = {
      "method": "post",
