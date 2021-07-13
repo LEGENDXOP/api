@@ -26,7 +26,7 @@ async def read_root():
     return {"Hello": "World"}
 
 @app.put("/addtoken/{token}")
-async def create_bot(token: dict):
+async def create_bot(token):
   token = dict(token)
   bot = tg(token, API_ID, API_HASH)
   await bot.start(bot_token=token["token"])
