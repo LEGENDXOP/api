@@ -2,6 +2,7 @@ from typing import Optional
 from telethon import TelegramClient as tg
 from fastapi import FastAPI
 import os
+import urllib
 import uuid
 from pydantic import BaseModel
 API_ID = os.environ.get("APP_ID")
@@ -27,6 +28,7 @@ async def read_root():
 
 @app.put("/addtoken/{token}")
 async def create_bot(token):
+  token = urllib.parse.unquote(token)
   print (token)
   token = dict(token)
   bot = tg(token, API_ID, API_HASH)
