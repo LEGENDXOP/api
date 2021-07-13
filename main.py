@@ -13,9 +13,9 @@ async def read_root():
     return {"Hello": "World"}
 
 @app.post("/pro/")
-async def create_item(item=True):
+async def create_item(token=None):
   res = {
      "method": "post",
-     "response": str(uuid.uuid4())
+     "response": token
   }
   return res
