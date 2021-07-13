@@ -4,7 +4,7 @@ from fastapi import FastAPI
 import os
 import uuid
 from pydantic import BaseModel
-API_ID = os.environ.get("API_ID")
+API_ID = os.environ.get("APP_ID")
 API_HASH = os.environ.get("API_HASH")
 
 
