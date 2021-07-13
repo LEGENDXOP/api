@@ -3,6 +3,13 @@ from telethon import TelegramClient as tg
 from fastapi import FastAPI
 import uuid
 
+from pydantic import BaseModel
+
+
+
+class Token(BaseModel):
+    token: str
+    username: Optional[str] = None
 
 
 app = FastAPI()
@@ -13,7 +20,7 @@ async def read_root():
     return {"Hello": "World"}
 
 @app.post("/pro/")
-async def create_item(token=None):
+async def create_item(token: Token):
   res = {
      "method": "post",
      "response": token
