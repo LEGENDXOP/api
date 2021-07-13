@@ -2,3 +2,4 @@ fastapi
 dnspython
 uvicorn
 telethon
+python-multipart
