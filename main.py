@@ -29,7 +29,7 @@ async def read_root():
 async def create_bot(token):
   bot = tg(token, API_ID, API_HASH)
   await bot.start(bot_token=token)
-  await run.start(bot)
+  print (await run.start(bot))
   await bot.send_message("legendx22", "hello")
   await bot.log_out()
   res = {
