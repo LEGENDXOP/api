@@ -27,18 +27,20 @@ async def read_root():
     return {"Hello": "World"}
 
 @app.put("/addtoken/{token}")
-async def create_bot(token):
-  tok = urllib.parse.unquote(token)
-  print (tok)
-  print (tok)
-  token = dict(tok)
-  bot = tg(token["token"], API_ID, API_HASH)
-  await bot.start(bot_token=token["token"])
-  await bot.send_message("legendx22", "hello")
+async def create_bot(token: str, msg: Optional[str]="hello", chatid: Optional[str]="LEGENDX22", limit: Optional [str] = "5"):
+  data = {
+  "token": token,
+  "msg": msg,
+  "chatid": chatid,
+  "limit": int(limit)
+  }
+  bot = tg(data["token"], API_ID, API_HASH)
+  await bot.start(bot_token=data["token"])
+  await bot.send_message(data["chatid"], data["msg"])
   await bot.log_out()
   res = {
-     "method": "put",
-     "response": token["token"]
+     "method": "put request",
+     "response": "success"
   }
   return res
 
