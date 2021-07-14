@@ -12,10 +12,6 @@
     "repository": "",
     "success_url": "",
     "env": {
-        "BOT_TOKEN": {
-            "description": "You Telegram Bot Token from @BotFather",
-            "value": ""
-        },
         "API_HASH": {
             "description": "Your API Hash from my.telegram.org",
             "value": ""
